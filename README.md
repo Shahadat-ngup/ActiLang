@@ -21,11 +21,13 @@ Built with Python and PLY (Lex/Yacc), it supports:
 | **Loops**     | `repeat "Retry 3x"`     |
 | **Swimlanes** | `actor "Customer"`      |
 
+## Note that, there is also a readme inside the main project folder that explains how to use the language.
+
 ## Installation  
 ```bash
 git clone https://github.com/shahadat/ActiLang.git
 cd ActiLang
 pip install ply
 
-## Note that, there is also a readme inside the main project folder that explains how to use the language. 
+ 
 
