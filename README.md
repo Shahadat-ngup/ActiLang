@@ -14,12 +14,14 @@ Built with Python and PLY (Lex/Yacc), it supports:
 - Error handling and syntax checks  
 
 ## Features  
-| Feature       | Example Syntax          | 
-|---------------|-------------------------|
-| **Actions**   | `do "Process Order"`    |
-| **Decisions** | `if "Payment OK?"`      |
-| **Loops**     | `repeat "Retry 3x"`     |
-| **Swimlanes** | `actor "Customer"`      |
+| Feature              | Example Syntax                     | 
+|----------------------|------------------------------------|
+| **Actors**           | `actor "Customer"`<br>`actor "Admin" as A` |
+| **Use Cases**        | `usecase "Place Order"`<br>`usecase "Login" as UC1` |
+| **Relationships**    | `ext "Login" of "Password Recovery"`<br>`inc "Checkout" in "Validate Payment"` |
+| **Inheritance**      | `actor "VIP" inherits "Customer"`  |
+| **System Boundary**  | `system "E-Commerce" { ... }`      |
+| **Packages**         | `package "Order System" { ... }`   |
 
 ## Note that, there is also a readme inside the main project folder that explains how to use the language.
 
