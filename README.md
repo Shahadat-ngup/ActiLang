@@ -27,3 +27,5 @@ git clone https://github.com/shahadat/ActiLang.git
 cd ActiLang
 pip install ply
 
+## Note that, there is also a readme inside the main project folder that explains how to use the language. 
+
