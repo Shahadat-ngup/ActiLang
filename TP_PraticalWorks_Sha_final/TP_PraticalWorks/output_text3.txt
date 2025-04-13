@@ -1,0 +1,3 @@
+[ERROR]: Actor 'Test' used in use case 'GenerateReport' is not declared.
+[ERROR]: Use case 'TestUC' in package 'PatientServices' is not declared.
+[ERROR]: Use case 'TU' in relationship is not declared.

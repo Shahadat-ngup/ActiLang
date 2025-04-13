@@ -1,0 +1,95 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> diagram
+Rule 1     diagram -> actor_decls system_decl
+Rule 2     actor_decl -> ACTOR IDENTIFIER
+Rule 3     actor_decl -> ACTOR IDENTIFIER AS IDENTIFIER
+Rule 4     actor_decl -> ACTOR IDENTIFIER INHERITS IDENTIFIER
+Rule 5     actor_decl -> ACTOR IDENTIFIER AS IDENTIFIER INHERITS IDENTIFIER
+Rule 6     actor_decl -> ACTOR_LIST COLON actor_items
+Rule 7     actor_items -> actor_items COMMA actor_item
+Rule 8     actor_items -> actor_item
+Rule 9     actor_item -> IDENTIFIER
+Rule 10    actor_item -> IDENTIFIER AS IDENTIFIER
+Rule 11    actor_item -> IDENTIFIER INHERITS IDENTIFIER
+Rule 12    actor_item -> IDENTIFIER AS IDENTIFIER INHERITS IDENTIFIER
+Rule 13    system_decl -> SYSTEM IDENTIFIER LBRACE system_content RBRACE
+Rule 14    system_decl -> empty
+Rule 15    system_content -> usecase_decls package_decls relationship_decl
+Rule 16    usecase_decls -> usecase_decls usecase_decl
+Rule 17    usecase_decls -> usecase_decl
+Rule 18    usecase_decls -> USECASE_LIST COLON usecase_items
+Rule 19    usecase_items -> usecase_items COMMA usecase_item
+Rule 20    usecase_items -> usecase_item
+Rule 21    usecase_item -> IDENTIFIER
+Rule 22    usecase_item -> IDENTIFIER AS IDENTIFIER
+Rule 23    usecase_item -> IDENTIFIER BY IDENTIFIER
+Rule 24    usecase_item -> IDENTIFIER AS IDENTIFIER BY IDENTIFIER
+Rule 25    usecase_decl -> USECASE IDENTIFIER
+Rule 26    usecase_decl -> USECASE IDENTIFIER AS IDENTIFIER
+Rule 27    usecase_decl -> USECASE IDENTIFIER BY IDENTIFIER
+Rule 28    usecase_decl -> USECASE IDENTIFIER AS IDENTIFIER BY IDENTIFIER
+Rule 29    package_decls -> package_decls package_decl
+Rule 30    package_decls -> package_decl
+Rule 31    package_decl -> PACKAGE IDENTIFIER LBRACE usecase_refs RBRACE
+Rule 32    usecase_refs -> usecase_refs usecase_ref
+Rule 33    usecase_refs -> usecase_ref
+Rule 34    usecase_ref -> IDENTIFIER
+Rule 35    relationship_decl -> RELATIONSHIPS LBRACE relationship_list RBRACE
+Rule 36    relationship_decl -> empty
+Rule 37    relationship_list -> relationship_list relationship
+Rule 38    relationship_list -> relationship
+Rule 39    relationship -> EXT IDENTIFIER OF IDENTIFIER
+Rule 40    relationship -> INC IDENTIFIER IN IDENTIFIER
+Rule 41    relationship -> INH IDENTIFIER FROM IDENTIFIER
+Rule 42    empty -> <empty>
+
+Terminals, with rules where they appear
+
+ACTOR                : 2 3 4 5
+ACTOR_LIST           : 6
+AS                   : 3 5 10 12 22 24 26 28
+BY                   : 23 24 27 28
+COLON                : 6 18
+COMMA                : 7 19
+EXT                  : 39
+FROM                 : 41
+IDENTIFIER           : 2 3 3 4 4 5 5 5 9 10 10 11 11 12 12 12 13 21 22 22 23 23 24 24 24 25 26 26 27 27 28 28 28 31 34 39 39 40 40 41 41
+IN                   : 40
+INC                  : 40
+INH                  : 41
+INHERITS             : 4 5 11 12
+LBRACE               : 13 31 35
+OF                   : 39
+PACKAGE              : 31
+RBRACE               : 13 31 35
+RELATIONSHIPS        : 35
+SYSTEM               : 13
+USECASE              : 25 26 27 28
+USECASE_LIST         : 18
+error                : 
+
+Nonterminals, with rules where they appear
+
+actor_decl           : 
+actor_decls          : 1
+actor_item           : 7 8
+actor_items          : 6 7
+diagram              : 0
+empty                : 14 36
+package_decl         : 29 30
+package_decls        : 15 29
+relationship         : 37 38
+relationship_decl    : 15
+relationship_list    : 35 37
+system_content       : 13
+system_decl          : 1
+usecase_decl         : 16 17
+usecase_decls        : 15 16
+usecase_item         : 19 20
+usecase_items        : 18 19
+usecase_ref          : 32 33
+usecase_refs         : 31 32
+

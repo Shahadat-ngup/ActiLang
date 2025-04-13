@@ -1,0 +1,36 @@
+@startuml
+skinparam dpi 100
+left to right direction
+actor Patient as P
+actor Nurse
+actor Doctor
+Doctor -|> Nurse
+actor Recepcionist as R
+actor Admin as A
+A -|> R
+rectangle HospitalManagementSystem {
+    package MedicalProcedures {
+        usecase ConductCheckup
+        usecase PrescribeMedication as PM
+    }
+    package PatientServices {
+        usecase BookAppointment as BA
+        usecase RescheduleAppointment as RA
+        usecase RegisterPatient as RP
+    }
+    package Administration {
+        usecase ProcessPayment as PP
+        usecase ManageAppointments as MA
+        usecase GenerateReport as GR
+    }
+    Doctor --> ConductCheckup
+    P --> BA
+    R --> RP
+    R --> PP
+    A --> MA
+    A --> GR
+    BA ..> RP : <<include>>
+    PM ..> ConductCheckup : <<extend>>
+    RA --|> BA
+}
+@enduml
