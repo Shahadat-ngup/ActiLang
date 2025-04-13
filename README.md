@@ -1,27 +1,29 @@
-# ActiLang  
-*A Domain-Specific Language (DSL) for Activity Diagrams*  
+# UseCaseDG  
+*A Domain-Specific Language (DSL) for Use Case Diagrams*  
 **Author**: Shahadat Hossain  
 
 ## Overview  
-ActiLang is a custom language designed to simplify the creation of activity diagrams. It translates human-readable syntax into PlantUML code, enabling:  
-✔ **Concise syntax** for workflows  
-✔ **Validation** of diagram logic  
-✔ **Flexible output** compatible with PlantUML  
+UseCaseDG is a custom language designed to simplify the creation of **use case diagrams**. It translates human-readable syntax into PlantUML code, enabling:  
+✔ **Declarative syntax** for actors and use cases  
+✔ **Relationship validation** (extends/includes/inherits)  
+✔ **Structured organization** with systems and packages  
 
 Built with Python and PLY (Lex/Yacc), it supports:  
-- Actions, decisions, and parallel flows  
-- Swimlanes (actors/partitions)  
-- Error handling and syntax checks  
+- Actor declarations with aliases and inheritance  
+- Use cases with optional actor associations  
+- System boundaries and package grouping  
+- Syntax error detection  
 
 ## Features  
-| Feature              | Example Syntax                     | 
-|----------------------|------------------------------------|
-| **Actors**           | `actor "Customer"`<br>`actor "Admin" as A` |
-| **Use Cases**        | `usecase "Place Order"`<br>`usecase "Login" as UC1` |
-| **Relationships**    | `ext "Login" of "Password Recovery"`<br>`inc "Checkout" in "Validate Payment"` |
-| **Inheritance**      | `actor "VIP" inherits "Customer"`  |
-| **System Boundary**  | `system "E-Commerce" { ... }`      |
-| **Packages**         | `package "Order System" { ... }`   |
+| Feature              | Example Syntax                     | Description |
+|----------------------|------------------------------------|-------------|
+| **Actors**           | `actor "Customer"`<br>`actor "Admin" as ADM` | Basic actor or with alias |
+| **Use Cases**        | `usecase "Place Order"`<br>`usecase "Login" as UC1 by "User"` | Standalone or actor-linked |
+| **Relationships**    | `ext "Login" of "Recovery"`<br>`inc "Checkout" in "Payment"` | Extension/Inclusion links |
+| **Inheritance**      | `actor "VIP" inherits "Customer"`  | Actor hierarchy |
+| **System Scope**     | `system "E-Commerce" { ... }`      | Boundary container |
+| **Packages**         | `package "Security" { "Login", "Logout" }` | Logical grouping |
+
 
 ## Note that, there is also a readme inside the main project folder that explains how to use the language.
 
